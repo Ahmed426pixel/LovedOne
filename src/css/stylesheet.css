@@ -1227,7 +1227,7 @@ body {
 	100% {
 		-ms-transform:translate(0px,0px);
 	}
-}o
+}
 @keyframes bannar_come {
 	0%{
 		transform:translate(0px,-1000px);
@@ -1902,9 +1902,333 @@ font-family: 'Lobster', cursive;
 
 
 
+/* ===== MOBILE RESPONSIVENESS FIXES ===== */
 
+/* Fix for iPhone XS Max and mobile devices */
+@media only screen and (max-width: 414px) {
+    .btn-primary {
+        font-size: 14px !important;
+        padding: 10px 15px !important;
+    }
+    
+    /* Fix balloon sizing for mobile */
+    .balloons {
+        width: 45px !important;
+        height: 85px !important;
+        background-size: 45px 85px !important;
+    }
+    
+    .balloons h2 {
+        font-size: 32px !important;
+    }
+    
+    /* Fix character/friend images sizing and z-index for proper layering */
+    .self-border {
+        width: 15% !important;
+        height: 15% !important;
+        z-index: auto !important;
+    }
+    
+    /* Individual z-index for each character to prevent overlap */
+    #self { z-index: 100 !important; }
+    #f1 { z-index: 91 !important; }
+    #f2 { z-index: 92 !important; }
+    #f3 { z-index: 93 !important; }
+    #f4 { z-index: 94 !important; }
+    #f5 { z-index: 95 !important; }
+    #f6 { z-index: 96 !important; }
+    #f7 { z-index: 97 !important; }
+    #f8 { z-index: 98 !important; }
+    #f9 { z-index: 89 !important; }
+    #f10 { z-index: 88 !important; }
+    #f11 { z-index: 87 !important; }
+    #f12 { z-index: 86 !important; }
+    
+    /* Fix cake positioning and sizing on mobile */
+    .cake_class {
+        left: 50% !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        width: 20% !important;
+        height: 25% !important;
+    }
+    
+    /* Fix cake cover (candle) positioning */
+    .cake-cover {
+        left: 50% !important;
+        top: 22% !important;
+        transform: translateX(-50%) !important;
+        width: 100px !important;
+        height: 170px !important;
+    }
+}
 
+/* Card responsiveness fixes - CRITICAL */
+@media only screen and (max-width: 768px) {
+    #card {
+        width: 90% !important;
+        height: 80% !important;
+        max-height: 500px !important;
+        transform: translateX(-50%) !important;
+        left: 50% !important;
+        top: 50% !important;
+        margin-top: -250px !important;
+        overflow: visible !important;
+        position: absolute !important;
+    }
+    
+    #card-front {
+        overflow: visible !important;
+        position: relative !important;
+    }
+    
+    #card-front .wrap {
+        overflow: visible !important;
+        position: relative !important;
+    }
+    
+    #card-front, #card-inside {
+        width: 50% !important;
+        left: 50% !important;
+    }
+    
+    #card h1 {
+        font-size: 36px !important;
+        line-height: 1.2 !important;
+        margin-top: 20px !important;
+    }
+    
+    #card-inside {
+        font-size: 0.95em !important;
+        line-height: 1.4 !important;
+    }
+    
+    .wrap {
+        padding: 1.2em 1.5em !important;
+    }
+    
+    #card-front button,
+    #close {
+        font-size: 1.1em !important;
+        padding: 0.5em 0.8em !important;
+        right: -8px !important;
+        bottom: 1em !important;
+        background: #F44 !important;
+        color: #FFF !important;
+        border: 2px solid #FFF !important;
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6) !important;
+        z-index: 10000 !important;
+    }
+    
+    /* Polaroid photo */
+    .polaroid {
+        width: 160px !important;
+        height: 150px !important;
+        border: 5px solid #f5f5f5 !important;
+        border-bottom: 30px solid #f5f5f5 !important;
+        left: 0 !important;
+        right: 0 !important;
+        top: 10% !important;
+    }
+    
+    p.signed {
+        font-size: 1.1em !important;
+        margin-top: 1em !important;
+    }
+    
+    /* CRITICAL: Position cake ON the card, not on viewport */
+    .cake_and_velas {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: absolute !important;
+        bottom: 40% !important;
+        left: 10% !important;
+        transform: translateX(-50%) !important;
+        width: 150px !important;
+        height: 150px !important;
+        overflow: visible !important;
+        z-index: 50 !important;
+        pointer-events: none !important;
+    }
+    
+    #cake {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        transform: scale(0.4) !important;
+        margin: -5em auto 0 auto !important;
+        position: relative !important;
+        left: 0 !important;
+        right: 0 !important;
+    }
+    
+    .velas {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: absolute !important;
+        top: 200px !important;
+        left: 100% !important;
+        margin-left: -2.5px !important;
+        width: 5px !important;
+        height: 40px !important;
+        z-index: 100 !important;
+    }
+    
+    .fuego {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    .cobertura,
+    .bizcocho {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+}
 
+/* Extra small mobile devices */
+@media only screen and (max-width: 375px) {
+    #card {
+        width: 95% !important;
+        height: 75% !important;
+        max-height: 450px !important;
+        margin-top: -225px !important;
+    }
+    
+    #card h1 {
+        font-size: 28px !important;
+    }
+    
+    #card-inside {
+        font-size: 0.85em !important;
+    }
+    
+    .polaroid {
+        width: 140px !important;
+        height: 130px !important;
+    }
+    
+    .cake_class {
+        width: 22% !important;
+    }
+    
+    .cake-cover {
+        width: 85px !important;
+        height: 150px !important;
+        top: 20% !important;
+    }
+    
+    /* Adjust cake for very small screens */
+    .cake_and_velas {
+        bottom: 18% !important;
+        width: 130px !important;
+        height: 130px !important;
+    }
+    
+    #cake {
+        transform: scale(0.35) !important;
+        margin: -4em auto 0 auto !important;
+    }
+    
+    .velas {
+        top: 115px !important;
+    }
+    
+    .self-border {
+        width: 18% !important;
+        height: 18% !important;
+    }
+}
+
+/* Landscape mode fixes */
+@media only screen and (max-height: 500px) and (orientation: landscape) {
+    .navbar-fixed-bottom {
+        position: relative !important;
+    }
+    
+    #card {
+        height: 85% !important;
+        max-height: 400px !important;
+        margin-top: -200px !important;
+    }
+    
+    .cake_and_velas {
+        bottom: 15% !important;
+        width: 120px !important;
+        height: 120px !important;
+    }
+    
+    #cake {
+        transform: scale(0.3) !important;
+        margin: -3em auto 0 auto !important;
+    }
+    
+    .velas {
+        top: 105px !important;
+    }
+    
+    .cake-cover {
+        top: 15% !important;
+    }
+    
+    .balloons {
+        width: 35px !important;
+        height: 70px !important;
+    }
+    
+    .self-border {
+        width: 12% !important;
+        height: 12% !important;
+    }
+}
+
+/* Medium tablets */
+@media only screen and (min-width: 415px) and (max-width: 768px) {
+    .self-border {
+        width: 12% !important;
+        height: 12% !important;
+    }
+    
+    #card {
+        width: 85% !important;
+        max-height: 550px !important;
+    }
+    
+    .cake_and_velas {
+        bottom: 22% !important;
+        width: 170px !important;
+        height: 170px !important;
+    }
+    
+    #cake {
+        transform: scale(0.45) !important;
+        margin: -5.5em auto 0 auto !important;
+    }
+    
+    .velas {
+        top: 140px !important;
+    }
+}
+
+/* Ensure proper cake and card visibility on all screens */
+@media only screen and (max-width: 480px) {
+    /* Make cake visible and properly aligned */
+    .cake_class {
+        transform: translateX(-50%) !important;
+        left: 50% !important;
+        top: 58% !important;
+    }
+    
+    .cake-cover {
+        transform: translateX(-50%) !important;
+        left: 50% !important;
+        top: 30% !important;
+    }
+}
 /* Add this CSS to your stylesheet.css file for laughing emoji animation */
 
 /* Laughing Emoji Container */
